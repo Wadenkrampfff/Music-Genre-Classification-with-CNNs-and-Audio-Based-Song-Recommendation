@@ -7,12 +7,10 @@
 An end-to-end machine learning project exploring music genre classification, feature engineering, convolutional neural networks, and content-based music recommendation using the GTZAN dataset.
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
-
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.x-red)
-
 ![License](https://img.shields.io/badge/License-MIT-green)
-
 ![Status](https://img.shields.io/badge/Status-Completed-success)
+
 ---
 
 ## 📖 Project Overview
@@ -63,9 +61,19 @@ Music Recommendation
 # 📂 Repository Structure
 
 ```
-Music-Genre-Classification/
+Music-Genre-Classification-with-CNNs-and-Audio-Based-Song-Recommendation/
 │
+├── app.py
 ├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── images/
+│   ├── banner.png
+│   ├── confusion_matrix.png
+│   ├── pca_embeddings.png
+│   ├── pipeline.png
+│   └── recommendation_example.png
 │
 ├── notebooks/
 │   ├── 01_audio_exploration.ipynb
@@ -75,11 +83,13 @@ Music-Genre-Classification/
 │   └── 14_final_project_review.ipynb
 │
 ├── results/
-│
-├── models/
+│   ├── embeddings/
+│   │   └── song_embeddings.npz
+│   └── models/
+│       └── final_cnn_genre_classifier_augmented.pth
 │
 ├── requirements.txt
-│
+├── LICENSE
 └── README.md
 ```
 
@@ -115,7 +125,7 @@ During the project several machine learning approaches were investigated.
 | Random Forest | MFCC | Classical baseline |
 | CNN | Mel-Spectrogram | Automatic feature learning |
 | Feature Fusion Random Forest | Multiple handcrafted features | Strongest classical classifier |
-| Final CNN | Learned embeddings | Classification + Recommendation |
+| Final CNN | Mel-spectrograms / learned embeddings | Classification + Recommendation |
 
 ---
 
@@ -141,6 +151,8 @@ During the project several machine learning approaches were investigated.
 | Classes | **10** |
 | Input | Mel-Spectrogram |
 | Recommendation | ✅ |
+
+> Earlier model accuracies were obtained on reduced four-genre subsets, while the final CNN was evaluated on all ten GTZAN genres. These values should therefore not be interpreted as a direct benchmark comparison.
 
 ---
 
@@ -204,43 +216,7 @@ indicating that the learned embedding space captures perceptually meaningful mus
 
 ---
 
-# ▶ Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/<your-repository>.git
-```
-
-Create a virtual environment
-
-```bash
-python -m venv .venv
-```
-
-Activate the environment
-
-Linux / WSL
-
-```bash
-source .venv/bin/activate
-```
-
-Windows
-
-```bash
-.venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## Run the Streamlit App
+# ▶ Installation and Running the Streamlit App
 
 ### 1. Clone the repository
 
@@ -293,6 +269,8 @@ To play the recommended GTZAN songs inside the application, download the GTZAN d
 ```text
 data/raw/gtzan/Data/genres_original/
 ```
+
+---
 
 # 🔮 Future Work
 
