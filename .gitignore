@@ -1,12 +1,19 @@
 data/raw/
 data/processed/
-results/models/
+
 *.wav
 *.mp3
 *.npy
 *.npz
 *.pt
 *.pth
+
+# Keep the final frontend assets in Git
+!results/models/
+!results/models/final_cnn_genre_classifier_augmented.pth
+
+!results/embeddings/
+!results/embeddings/song_embeddings.npz
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

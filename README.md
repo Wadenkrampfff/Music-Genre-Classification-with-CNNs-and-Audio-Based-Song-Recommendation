@@ -240,6 +240,60 @@ pip install -r requirements.txt
 
 ---
 
+## Run the Streamlit App
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Wadenkrampfff/Music-Genre-Classification-with-CNNs-and-Audio-Based-Song-Recommendation.git
+cd Music-Genre-Classification-with-CNNs-and-Audio-Based-Song-Recommendation
+```
+
+### 2. Create and activate a virtual environment
+
+Linux / WSL:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Windows PowerShell:
+
+```powershell
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 4. Start the application
+
+```bash
+python -m streamlit run app.py
+```
+
+The application will normally be available at:
+
+```text
+http://localhost:8501
+```
+
+### Recommendation audio playback
+
+Genre classification and recommendation ranking work with the included model and embedding database.
+
+To play the recommended GTZAN songs inside the application, download the GTZAN dataset separately and place it at:
+
+```text
+data/raw/gtzan/Data/genres_original/
+```
+
 # 🔮 Future Work
 
 Possible future extensions include:
